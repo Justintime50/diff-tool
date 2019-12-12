@@ -1,4 +1,4 @@
-# HTML Diff
+# Diff
 
 Display a diff between two files in HTML.
 
