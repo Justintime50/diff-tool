@@ -17,12 +17,11 @@ pip install -r requirements.txt
 
 ## Usage
 
-1) Place the contents of the older file in F1 and the contents of the newer file in F2. 
+1) Place the contents of the older file in F1 and the contents of the newer file in F2. **Just think "New in 2".**
 2) Run the script and it will generate an HTML file.
-3) Open the HTML file and view in a browser.
-
-**Just think "New in 2"**
 
 ```bash
 python diff.py > diff.html
 ```
+
+3) Open the HTML file and view in a browser.
