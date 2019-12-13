@@ -1,4 +1,4 @@
-<h3 align="center">Diff</h3>
+<h1 align="center">Diff</h1>
 
 <p align="center">
     <img src="https://travis-ci.org/Justintime50/diff.svg?branch=master">
@@ -9,11 +9,10 @@
 
 ## Setup
 
-1) Make sure Python is installed.
-2) Install Dependencies:
+Install dependencies:
 
 ```bash
-pip3 install requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Usage
@@ -25,5 +24,5 @@ pip3 install requirements.txt
 **Just think "New in 2"**
 
 ```bash
-python3 diff.py > diff.html
+python diff.py > diff.html
 ```
