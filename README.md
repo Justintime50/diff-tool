@@ -7,7 +7,6 @@
 
 <p align="center">Display a diff between two files in HTML.</p>
 
-
 ## Setup
 
 1) Make sure Python is installed.
