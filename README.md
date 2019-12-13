@@ -1,11 +1,9 @@
-<h1 align="center">Diff</h1>
+# Diff
 
-<p align="center">
-    <img src="https://travis-ci.org/Justintime50/diff.svg?branch=master">
-    <img src="https://badges.frapsoft.com/os/mit/mit.svg?v=103">
-</p>
+[![Build Status](https://travis-ci.org/Justintime50/diff.svg?branch=master)](https://travis-ci.org/Justintime50/diff)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
-<p align="center">Display a diff between two files in HTML.</p>
+Display a diff between two files in HTML.
 
 ## Setup
 
