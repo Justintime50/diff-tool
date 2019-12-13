@@ -1,14 +1,21 @@
-# HTML Diff
+<h1 align="center">Diff</h1>
 
-Display a diff between two files in HTML.
+<p align="center">
+<img src="https://travis-ci.org/Justintime50/diff.svg?branch=master">
+<img src="https://badges.frapsoft.com/os/mit/mit.svg?v=103">
+</p>
+
+<p align="center">Display a diff between two files in HTML.</p>
+
+Can be used in a browser or in Jupiter.
 
 ## Setup
 
 1) Make sure Python is installed.
-2) Install IPython:
+2) Install Dependencies:
 
 ```bash
-pip3 install ipython
+pip3 install requirements.txt
 ```
 
 ## Usage
