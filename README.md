@@ -1,13 +1,12 @@
-<h1 align="center">Diff</h1>
+<h3 align="center" style="font-size: 40px;">Diff</h3>
 
 <p align="center">
 <img src="https://travis-ci.org/Justintime50/diff.svg?branch=master">
 <img src="https://badges.frapsoft.com/os/mit/mit.svg?v=103">
 </p>
 
-<p align="center">Display a diff between two files in HTML.</p>
+<p align="center">Display a diff between two files in HTML.<br /><br />Can be used in a browser or in Jupiter.</p>
 
-Can be used in a browser or in Jupiter.
 
 ## Setup
 
