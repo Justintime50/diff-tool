@@ -1,13 +1,17 @@
+<div align="center">
+
 # Diff
+
+Display a diff between two files in HTML.
 
 [![Build Status](https://travis-ci.org/Justintime50/diff.svg?branch=master)](https://travis-ci.org/Justintime50/diff)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
-Display a diff between two files in HTML.
+<img src="assets/showcase.png">
 
-## Setup
+</div>
 
-Install dependencies:
+## Install
 
 ```bash
 pip install -r requirements.txt
