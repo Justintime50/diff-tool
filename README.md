@@ -4,7 +4,7 @@
 
 Display a diff between two files in HTML.
 
-[![Build Status](https://travis-ci.org/Justintime50/diff.svg?branch=master)](https://travis-ci.org/Justintime50/diff)
+[![Build Status](https://travis-ci.com/Justintime50/diff.svg?branch=master)](https://travis-ci.com/Justintime50/diff)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
 <img src="assets/showcase.png">
