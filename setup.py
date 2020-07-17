@@ -9,7 +9,7 @@ REQUIREMENTS = [
 
 setuptools.setup(
     name='diff-tool',
-    version='1.0.0',
+    version='1.0.1',
     description='Display a diff between two files in HTML.',
     long_description=long_description,
     long_description_content_type="text/markdown",

@@ -20,21 +20,17 @@ pip3 install diff-tool
 
 ## Usage
 
+Running this tool requires two files to compare and will output the **diff**erence to `diff.html`.
+
 ```
 Usage:
-    diff-tool -f1 /path/to/file1.txt -f2 /path/to/file2.txt > diff.html
-
-    open diff.html
+    diff-tool -f1 /path/to/file1.txt -f2 /path/to/file2.txt
 
 Options:
     -h, --help                show this help message and exit
     -f1 FILE1, --file1 FILE1  The base file to compare a second file to.
     -f2 FILE2, --file2 FILE2  The second file compared to the base first file.
 ```
-
-1) Place the contents of the older file in `f1.html` and the contents of the newer file in `f2.html`. **Just think "New in 2".**
-2) Run the script and it will generate an HTML file.
-3) Open the HTML file in a browser and view the diff.
 
 ## Development
 
