@@ -25,8 +25,9 @@ def run():
     diff = difflib.HtmlDiff()
     file_1 = open(args.file1).readlines()
     file_2 = open(args.file2).readlines()
-
-    print(diff.make_file(file_1, file_2, context=True, numlines=3))
+    with open('diff.html', 'w') as output:
+        output.write(diff.make_file(file_1, file_2, context=True, numlines=3))
+    print('Diff generated as diff.html, open this file in a browser to see your diff.')
 
 
 if __name__ == "__main__":
