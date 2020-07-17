@@ -1,2 +1,6 @@
 .DS_Store
 diff.html
+*.egg-info
+dist
+build
+__pycache__
