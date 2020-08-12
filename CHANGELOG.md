@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## v1.1.0 (2020-08-12)
+
+* Added automated releases via Travis
+* Updated README badges
+* Added Makefile
+* Added unit tests
+* Cleaned up code to be more pythonic
+* Switched from Pylint to Flake8
+
 ## v1.0.1 (2020-07-16)
 
 * Script now outputs the data directly to an HTML file in-code instead of requiring this on the command line.

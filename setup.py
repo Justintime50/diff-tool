@@ -3,13 +3,9 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-REQUIREMENTS = [
-    'argparse >= 1.4.0',
-]
-
 setuptools.setup(
     name='diff-tool',
-    version='1.0.1',
+    version='1.1.0',
     description='Display a diff between two files in HTML.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -22,10 +18,9 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    install_requires=REQUIREMENTS,
     extras_require={
         'dev': [
-            'pylint >= 2.5.0',
+            'flake8 >= 3.8.0',
         ]
     },
     entry_points={
