@@ -5,13 +5,11 @@ python:
     - '3.7'
     - '3.8'
 
-install:
-    - python -m venv venv
-    - venv/bin/pip install -e ."[dev]"
+install: pip install -e ."[dev]"
 
-script: 
-    - make lint
-    - make test
+script:
+    - flake8 diff/*.py
+    - python -m unittest
 
 deploy:
     provider: pypi
