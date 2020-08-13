@@ -5,6 +5,7 @@
 Display a diff between two files in HTML.
 
 [![Build Status](https://travis-ci.com/Justintime50/diff.svg?branch=master)](https://travis-ci.com/Justintime50/diff)
+[![Coverage Status](https://coveralls.io/repos/github/Justintime50/diff/badge.svg?branch=master)](https://coveralls.io/github/Justintime50/diff?branch=master)
 [![PyPi](https://img.shields.io/pypi/v/diff-tool)](https://pypi.org/project/diff-tool)
 [![Licence](https://img.shields.io/github/license/justintime50/diff)](https://opensource.org/licenses/mit-license.php)
 

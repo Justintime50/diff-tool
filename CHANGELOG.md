@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.2.0 (2020-08-12)
+
+* Various bug fixes and code refactors
+* Mocked all tests
+* Added pytest and coveralls
+
 ## v1.1.0 (2020-08-12)
 
 * Added automated releases via Travis
