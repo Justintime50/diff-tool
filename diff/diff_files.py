@@ -13,19 +13,20 @@ class DiffCLI():
             '-f1',
             '--file1',
             required=True,
-            help='The path to the base file to compare a second file to.'
+            help='The output to the base file to compare a second file to.'
         )
         parser.add_argument(
             '-f2',
             '--file2',
             required=True,
-            help='The path to the second file compared to the base file.'
+            help='The output to the second file compared to the base file.'
         )
         parser.add_argument(
             '-o',
             '--output',
             required=False,
-            help='The path to the output file including filename.'
+            default='diff.html',
+            help='The output to the output file including filename.'
         )
         parser.parse_args(namespace=self)
 
@@ -33,34 +34,41 @@ class DiffCLI():
         Diff.run(
             self.file1,
             self.file2,
+            self.output,
         )
 
 
 class Diff():
     @classmethod
-    def run(self, file1, file2, path='diff.html'):
+    def run(cls, file1, file2, output):
         """Display a diff between two files in HTML.
         """
-
-        diff = difflib.HtmlDiff()
-        file1 = self.open_file1(file1)
-        file2 = self.open_file2(file2)
-        with open(path, 'w') as output:
-            output.write(diff.make_file(
-                file1, file2, context=True, numlines=3))
-        print((f'Diff generated as {path}, '
+        cls.generate_diff_file(file1, file2, output)
+        print((f'Diff generated as {output}, '
                'open this file in a browser to see your diff.'))
 
-    @staticmethod
-    def open_file1(file1):
-        with open(file1, 'r') as file:
-            content = file.readlines()
-        return content
+    @ classmethod
+    def generate_diff_file(cls, file1, file2, output):
+        diff = difflib.HtmlDiff()
+        file1 = cls.open_file(file1)
+        file2 = cls.open_file(file2)
+        generated_file = diff.make_file(
+            file1,
+            file2,
+            context=True,
+            numlines=3,
+        )
 
-    @staticmethod
-    def open_file2(file2):
-        with open(file2, 'r') as file:
-            content = file.readlines()
+        with open(output, 'w') as output_file:
+            output_file.write(generated_file)
+
+        return generated_file
+
+    @ classmethod
+    def open_file(cls, file):
+        with open(file, 'r') as opened_file:
+            content = opened_file.readlines()
+
         return content
 
 

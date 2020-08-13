@@ -9,7 +9,8 @@ install: pip install -e ."[dev]"
 
 script:
     - flake8 diff/*.py
-    - python -m unittest
+    - flake8 test/*.py
+    - pytest --cov=diff
 
 deploy:
     provider: pypi
@@ -18,3 +19,7 @@ deploy:
         secure: cyzEZ5vYxR/xl4oxxEYc/OqIeE/aG2TQfGcDDV6QZ1dR/KdqsLMivkG+DFMmaYHfyvEtxBOLXmWSg7ubiiplbWri7zxJ9X3TbzEHMnw3s38SsgGLueIAHT9B7rDK8EQ45/luQFiaJ+WpVMvWxEsW3SV98VyJC0CHON2hN0gbJir/wdxC7bnwr47nI10Yi38dJfcZ9yUo0jEuoh0bpqLKb9LdPYqOQhPuZzx1bArAnwanp6cZCjS2QakgHDEQoBSh0nJEuMHBA/Rw1iqyGYPLbc/X/V6GhTeeUroJYz4hLdWWo0OLvndnPrPuButQBSs3yehjC4m8mZZrRQd0RkZZJhWNIKs9qjfXkxlrM/2gh6z1duqIZhP6N/NezZSDAlGKl6SEgOxKZMut5+a/Dzg9VkvuUuM47lUMwppWwkDCd/yCrtpAnk03KX47JykM5cYWA6qcxz5f4AIgFVuj0/KehszhZdOO0eQQfuH1rk0lcV/mQii31V63hOc0dtfEkgE2odP/neNhG81h22phMhjeka4wXBM88mZ+rC8C1Fv5E+h2GTwqkDqX6PhuJcZc7rWfv8fkPsNTh3K56KiNhsTHW9WgPadGryCsPf8Lfcth+EFwrxT9ohUfo4aLpRzkoYXnx3ICK2KGIKxsZPVJShkIvXWmYfcXldjnYZym6WswlME=
     on:
         tags: true
+    skip_existing: true
+
+after_success:
+    - coveralls
