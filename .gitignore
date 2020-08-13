@@ -1,5 +1,5 @@
 .DS_Store
-diff.html
+*.html
 *.egg-info
 dist
 build

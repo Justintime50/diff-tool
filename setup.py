@@ -20,6 +20,9 @@ setuptools.setup(
     ],
     extras_require={
         'dev': [
+            'pytest >= 6.0.0',
+            'pytest-cov >= 2.10.0',
+            'coveralls >= 2.1.2',
             'flake8 >= 3.8.0',
         ]
     },

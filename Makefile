@@ -21,16 +21,13 @@ clean:
 	rm -rf build
 	rm -rf *.egg-info
 
-## run - Run the project locally
-run:
-	venv/bin/python diff/diff_files.py
-
 ## lint - Lint the project
 lint:
 	venv/bin/flake8 diff/*.py
+	venv/bin/flake8 test/*.py
 
 ## test - Test the project
 test:
-	venv/bin/python -m unittest
+	venv/bin/pytest
 
 .PHONY: help install clean lint test 
