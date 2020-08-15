@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.2.1 (2020-08-14)
+
+* Fixed the entry point for the script (pip installs work again)
+
 ## v1.2.0 (2020-08-12)
 
 * Various bug fixes and code refactors
