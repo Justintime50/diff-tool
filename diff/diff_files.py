@@ -47,7 +47,7 @@ class Diff():
         print((f'Diff generated as {output}, '
                'open this file in a browser to see your diff.'))
 
-    @ classmethod
+    @classmethod
     def generate_diff_file(cls, file1, file2, output):
         diff = difflib.HtmlDiff()
         file1 = cls.open_file(file1)
@@ -64,7 +64,7 @@ class Diff():
 
         return generated_file
 
-    @ classmethod
+    @classmethod
     def open_file(cls, file):
         with open(file, 'r') as opened_file:
             content = opened_file.readlines()
@@ -72,5 +72,9 @@ class Diff():
         return content
 
 
-if __name__ == "__main__":
+def main():
     DiffCLI().run()
+
+
+if __name__ == "__main__":
+    main()

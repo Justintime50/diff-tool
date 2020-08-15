@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='diff-tool',
-    version='1.2.0',
+    version='1.2.1',
     description='Display a diff between two files in HTML.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -28,7 +28,7 @@ setuptools.setup(
     },
     entry_points={
         'console_scripts': [
-            'diff-tool=diff.diff_files:run'
+            'diff-tool=diff.diff_files:main'
         ]
     },
     python_requires='>=3.6',
