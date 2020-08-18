@@ -1,0 +1,6 @@
+[report]
+exclude_lines =
+    parser
+    if __name__ == '__main__':
+    main()
+    run()
