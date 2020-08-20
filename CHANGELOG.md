@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.0 (2020-08-20)
+
+* Overhauled testing suite (less exclusions, more robust tests)
+
 ## v1.2.1 (2020-08-14)
 
 * Fixed the entry point for the script (pip installs work again)

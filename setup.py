@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='diff-tool',
-    version='1.2.1',
+    version='1.3.0',
     description='Display a diff between two files in HTML.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -24,6 +24,7 @@ setuptools.setup(
             'pytest-cov >= 2.10.0',
             'coveralls >= 2.1.2',
             'flake8 >= 3.8.0',
+            'mock >= 4.0.0',
         ]
     },
     entry_points={

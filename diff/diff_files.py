@@ -31,11 +31,12 @@ class DiffCLI():
         parser.parse_args(namespace=self)
 
     def run(self):
-        Diff.run(
+        diff = Diff.run(
             self.file1,
             self.file2,
             self.output,
         )
+        return diff
 
 
 class Diff():
@@ -43,9 +44,10 @@ class Diff():
     def run(cls, file1, file2, output):
         """Display a diff between two files in HTML.
         """
-        cls.generate_diff_file(file1, file2, output)
+        diff = cls.generate_diff_file(file1, file2, output)
         print((f'Diff generated as {output}, '
                'open this file in a browser to see your diff.'))
+        return diff
 
     @classmethod
     def generate_diff_file(cls, file1, file2, output):
