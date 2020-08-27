@@ -1,32 +1,13 @@
 import mock
-import pytest
-import argparse
 from diff import diff_files
 
 
-@mock.patch('argparse.ArgumentParser.parse_args',
-            return_value=argparse.Namespace(
-                file1='file1.txt',
-                file2='file2.txt',
-                output='output.html',
-                )
-            )
-def test_cli(mock_args):
-    diff_files.DiffCLI()
-
-
-@pytest.mark.skip('Skipping this test until we can mock "self" in argparse.')
-def test_cli_run():
-    raise Exception('TODO: finish this test')
-
-
 def test_diff_run():
-    diff_file = 'test/files/diff.html'
     with mock.patch('builtins.open', mock.mock_open()):
         result = diff_files.Diff.run(
-            'test/files/file1.txt',
-            'test/files/file2.txt',
-            diff_file,
+            'file1.txt',
+            'file2.txt',
+            'output.html'
         )
     assert '<!DOCTYPE html' in result
 
