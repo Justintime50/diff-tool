@@ -12,18 +12,21 @@ class DiffCLI():
         parser.add_argument(
             '-f1',
             '--file1',
+            type=argparse.FileType('r'),
             required=True,
             help='The output to the base file to compare a second file to.'
         )
         parser.add_argument(
             '-f2',
             '--file2',
+            type=argparse.FileType('r'),
             required=True,
             help='The output to the second file compared to the base file.'
         )
         parser.add_argument(
             '-o',
             '--output',
+            type=argparse.FileType('w'),
             required=False,
             default='diff.html',
             help='The output to the output file including filename.'

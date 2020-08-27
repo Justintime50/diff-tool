@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.3.1 (2020-08-26)
+
+* Simplified unit tests
+
 ## v1.3.0 (2020-08-20)
 
 * Overhauled testing suite (less exclusions, more robust tests)
