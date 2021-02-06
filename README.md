@@ -54,5 +54,5 @@ make lint
 make test
 
 # Run the tool locally
-venv/bin/python diff/diff_files.py --help
+venv/bin/python diff_tool/diff_files.py --help
 ```

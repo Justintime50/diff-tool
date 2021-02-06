@@ -2,7 +2,7 @@ import argparse
 import difflib
 
 
-class DiffCLI():
+class CLI():
     def __init__(self):
         """Initialize CLI args
         """
@@ -34,7 +34,7 @@ class DiffCLI():
         parser.parse_args(namespace=self)
 
     def run(self):
-        diff = Diff.run(
+        diff = DiffTool.run(
             self.file1,
             self.file2,
             self.output,
@@ -42,21 +42,20 @@ class DiffCLI():
         return diff
 
 
-class Diff():
-    @classmethod
-    def run(cls, file1, file2, output):
+class DiffTool():
+    @staticmethod
+    def run(file1, file2, output):
         """Display a diff between two files in HTML.
         """
-        diff = cls.generate_diff_file(file1, file2, output)
-        print((f'Diff generated as {output}, '
-               'open this file in a browser to see your diff.'))
+        diff = DiffTool.generate_diff_file(file1, file2, output)
+        print(f'Diff generated as {output}, open this file in a browser to see your diff.')
         return diff
 
-    @classmethod
-    def generate_diff_file(cls, file1, file2, output):
+    @staticmethod
+    def generate_diff_file(file1, file2, output):
         diff = difflib.HtmlDiff()
-        file1 = cls.open_file(file1)
-        file2 = cls.open_file(file2)
+        file1 = DiffTool.open_file(file1)
+        file2 = DiffTool.open_file(file2)
         generated_file = diff.make_file(
             file1,
             file2,
@@ -69,8 +68,8 @@ class Diff():
 
         return generated_file
 
-    @classmethod
-    def open_file(cls, file):
+    @staticmethod
+    def open_file(file):
         with open(file, 'r') as opened_file:
             content = opened_file.readlines()
 
@@ -78,8 +77,8 @@ class Diff():
 
 
 def main():
-    DiffCLI().run()
+    CLI().run()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

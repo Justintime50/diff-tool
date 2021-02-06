@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v2.0.0 (2021-02-06)
+
+* Renamed `diff-tool` from `diff` to match published name and avoid conflict with potential other `diff` tools
+* Changed all classmethods to staticmethods
+* Switched from Travis CI to GitHub Actions
+
 ## v1.3.1 (2020-08-26)
 
 * Simplified unit tests
