@@ -6,8 +6,8 @@ help:
 
 ## venv - Install the virtual environment
 venv:
-	$(VIRTUALENV) ~/.venv/diff-tool/
-	ln -snf ~/.venv/diff-tool/ venv
+	$(VIRTUALENV) ~/.venv/diff_tool/
+	ln -snf ~/.venv/diff_tool/ venv
 	venv/bin/pip install -e ."[dev]"
 
 ## install - Install the project locally
@@ -15,7 +15,7 @@ install: | venv
 
 ## clean - Remove the virtual environment and clear out .pyc files
 clean:
-	rm -rf ~/.venv/diff-tool/ venv
+	rm -rf ~/.venv/diff_tool/ venv
 	find . -name '*.pyc' -delete
 	rm -rf dist
 	rm -rf build
@@ -27,11 +27,15 @@ run:
 
 ## lint - Lint the project
 lint:
-	venv/bin/flake8 diff/*.py
-	venv/bin/flake8 test/*.py
+	venv/bin/flake8 diff_tool/*.py
+	venv/bin/flake8 test/unit/*.py
 
 ## test - Test the project
 test:
 	venv/bin/pytest
 
-.PHONY: help install clean lint test 
+## coverage - Test the project and generate an HTML coverage report
+coverage:
+	venv/bin/pytest --cov=diff_tool --cov-branch --cov-report=html --cov-report=term-missing
+
+.PHONY: help install clean lint test coverage
