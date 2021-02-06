@@ -1,6 +1,6 @@
 <div align="center">
 
-# Diff
+# Diff Tool
 
 Display a diff between two files in HTML.
 
