@@ -5,11 +5,11 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='diff-tool',
-    version='1.3.1',
+    version='2.0.0',
     description='Display a diff between two files in HTML.',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='http://github.com/justintime50/diff',
+    url='http://github.com/justintime50/diff-tool',
     author='Justintime50',
     license='MIT',
     packages=setuptools.find_packages(),
@@ -29,7 +29,7 @@ setuptools.setup(
     },
     entry_points={
         'console_scripts': [
-            'diff-tool=diff.diff_files:main'
+            'diff-tool=diff_tool.diff:main'
         ]
     },
     python_requires='>=3.6',
