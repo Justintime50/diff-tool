@@ -21,10 +21,6 @@ clean:
 	rm -rf build
 	rm -rf *.egg-info
 
-## run - Run the project
-run:
-	venv/bin/python diff/diff_files.py
-
 ## lint - Lint the project
 lint:
 	venv/bin/flake8 diff_tool/*.py
