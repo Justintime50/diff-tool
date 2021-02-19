@@ -1,10 +1,10 @@
 import mock
-from diff_tool import diff
+from diff_tool import DiffTool
 
 
 def test_diff_run():
     with mock.patch('builtins.open', mock.mock_open()):
-        result = diff.DiffTool.run(
+        result = DiffTool.run(
             'file1.txt',
             'file2.txt',
             'output.html'
@@ -18,7 +18,7 @@ def test_open_file():
     content = 'Hello'
     mock_open = mock.mock_open(read_data=content)
     with mock.patch('builtins.open', mock_open):
-        result = diff.DiffTool.open_file('file1.txt')
+        result = DiffTool.open_file('file1.txt')
     assert content in result
 
 
@@ -28,7 +28,7 @@ def test_generating_diff():
     """
     diff_file = 'test/files/diff.html'
     with mock.patch('builtins.open', mock.mock_open()) as mocked_file:
-        result = diff.DiffTool.generate_diff_file(
+        result = DiffTool.generate_diff_file(
             'test/files/file1.txt',
             'test/files/file2.txt',
             diff_file,
