@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v2.1.0 (2021-02-19)
+
+* Exporting package via `__init__.py` file
+* Small code cleanup
+
 ## v2.0.0 (2021-02-06)
 
 * Renamed `diff-tool` from `diff` to match published name and avoid conflict with potential other `diff` tools

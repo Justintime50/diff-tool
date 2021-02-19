@@ -2,10 +2,8 @@ import argparse
 import difflib
 
 
-class CLI():
+class Cli():
     def __init__(self):
-        """Initialize CLI args
-        """
         parser = argparse.ArgumentParser(
             description='Display a diff between two files in HTML.'
         )
@@ -34,12 +32,11 @@ class CLI():
         parser.parse_args(namespace=self)
 
     def run(self):
-        diff = DiffTool.run(
+        DiffTool.run(
             self.file1,
             self.file2,
             self.output,
         )
-        return diff
 
 
 class DiffTool():
@@ -49,6 +46,7 @@ class DiffTool():
         """
         diff = DiffTool.generate_diff_file(file1, file2, output)
         print(f'Diff generated as {output}, open this file in a browser to see your diff.')
+
         return diff
 
     @staticmethod
@@ -77,7 +75,7 @@ class DiffTool():
 
 
 def main():
-    CLI().run()
+    Cli().run()
 
 
 if __name__ == '__main__':
