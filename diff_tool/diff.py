@@ -10,21 +10,18 @@ class Cli():
         parser.add_argument(
             '-f1',
             '--file1',
-            type=argparse.FileType('r'),
             required=True,
-            help='The output to the base file to compare a second file to.'
+            help='The path to the base file to compare a second file to.'
         )
         parser.add_argument(
             '-f2',
             '--file2',
-            type=argparse.FileType('r'),
             required=True,
-            help='The output to the second file compared to the base file.'
+            help='The path to the second file compared to the base file.'
         )
         parser.add_argument(
             '-o',
             '--output',
-            type=argparse.FileType('w'),
             required=False,
             default='diff.html',
             help='The output to the output file including filename.'
@@ -41,37 +38,39 @@ class Cli():
 
 class DiffTool():
     @staticmethod
-    def run(file1, file2, output):
+    def run(file1, file2, output='diff.html'):
         """Display a diff between two files in HTML.
         """
-        diff = DiffTool.generate_diff_file(file1, file2, output)
+        file1_content = DiffTool._open_file(file1)
+        file2_content = DiffTool._open_file(file2)
+        diff = DiffTool.generate_diff(file1_content, file2_content)
+        DiffTool._write_file(diff, output)
         print(f'Diff generated as {output}, open this file in a browser to see your diff.')
 
-        return diff
-
     @staticmethod
-    def generate_diff_file(file1, file2, output):
-        diff = difflib.HtmlDiff()
-        file1 = DiffTool.open_file(file1)
-        file2 = DiffTool.open_file(file2)
-        generated_file = diff.make_file(
+    def generate_diff(file1, file2):
+        """Generate the content for the diff file
+        """
+        generated_diff = difflib.HtmlDiff().make_file(
             file1,
             file2,
             context=True,
             numlines=3,
         )
 
-        with open(output, 'w') as output_file:
-            output_file.write(generated_file)
-
-        return generated_file
+        return generated_diff
 
     @staticmethod
-    def open_file(file):
-        with open(file, 'r') as opened_file:
+    def _open_file(filename):
+        with open(filename, 'r') as opened_file:
             content = opened_file.readlines()
 
         return content
+
+    @staticmethod
+    def _write_file(content, output='diff.html'):
+        with open(output, 'w') as output_file:
+            output_file.write(content)
 
 
 def main():

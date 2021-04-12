@@ -41,7 +41,7 @@ Options:
     -f2 FILE2, --file2 FILE2
                             The path to the second file compared to the base file.
     -o OUTPUT, --output OUTPUT
-                            The path to the output file including filename..
+                            The path to the output file including filename.
 ```
 
 ## Development

@@ -2,36 +2,35 @@ import mock
 from diff_tool import DiffTool
 
 
-def test_diff_run():
-    with mock.patch('builtins.open', mock.mock_open()):
-        result = DiffTool.run(
-            'file1.txt',
-            'file2.txt',
-            'output.html'
-        )
+@mock.patch('diff_tool.diff.DiffTool._open_file')
+@mock.patch('diff_tool.diff.DiffTool._write_file')
+def test_diff_run(mock_write, mock_open):
+    result = DiffTool.run(
+        'setup.py',
+        'README.md',
+        'output.html'
+    )
+    assert mock_open.call_count == 2
+    mock_write.assert_called_once()
+
+
+def test_generate_diff():
+    result = DiffTool.generate_diff(
+        'test/files/file1.txt',
+        'test/files/file2.txt',
+    )
+
     assert '<!DOCTYPE html' in result
 
 
 def test_open_file():
-    """Open a file and check if the contents can be read
-    """
-    content = 'Hello'
-    mock_open = mock.mock_open(read_data=content)
-    with mock.patch('builtins.open', mock_open):
-        result = DiffTool.open_file('file1.txt')
-    assert content in result
+    content = DiffTool._open_file('README.md')
+
+    assert '# Diff Tool\n' in content
 
 
-def test_generating_diff():
-    """Generate a diff.html file and check if the contents are the output
-    of the generate_diff function
-    """
-    diff_file = 'test/files/diff.html'
+def test_write_file():
     with mock.patch('builtins.open', mock.mock_open()) as mocked_file:
-        result = DiffTool.generate_diff_file(
-            'test/files/file1.txt',
-            'test/files/file2.txt',
-            diff_file,
-        )
-        mocked_file.assert_called_with(diff_file, 'w')
-        mocked_file().write.assert_called_once_with(result)
+        content = DiffTool._write_file('file_content', 'test.txt')
+
+        mocked_file.assert_called_with('test.txt', 'w')
