@@ -5,7 +5,7 @@ from diff_tool import DiffTool
 @mock.patch('diff_tool.diff.DiffTool._open_file')
 @mock.patch('diff_tool.diff.DiffTool._write_file')
 def test_diff_run(mock_write, mock_open):
-    result = DiffTool.run(
+    DiffTool.run(
         'setup.py',
         'README.md',
         'output.html'
@@ -31,6 +31,6 @@ def test_open_file():
 
 def test_write_file():
     with mock.patch('builtins.open', mock.mock_open()) as mocked_file:
-        content = DiffTool._write_file('file_content', 'test.txt')
+        DiffTool._write_file('file_content', 'test.txt')
 
         mocked_file.assert_called_with('test.txt', 'w')
