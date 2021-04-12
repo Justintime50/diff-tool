@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v2.2.0 (2021-04-12)
+
+* Fixed a bug when using this as a CLI tool and the tool wouldn't accept the path arguments (eg: TypeError: expected str, bytes or os.PathLike object, not TextIOWrapper)
+* Refactored the code to be more clean and allow each function to only do a single thing, better variable names, default argument values, etc
+
 ## v2.1.0 (2021-02-19)
 
 * Exporting package via `__init__.py` file
