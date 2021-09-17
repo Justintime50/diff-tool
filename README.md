@@ -9,7 +9,7 @@ Display a diff between two files in HTML.
 [![PyPi](https://img.shields.io/pypi/v/diff-tool)](https://pypi.org/project/diff-tool)
 [![Licence](https://img.shields.io/github/license/justintime50/diff-tool)](https://opensource.org/licenses/mit-license.php)
 
-<img src="assets/showcase.png" alt="Showcase">
+<img src="https://raw.githubusercontent.com/justintime50/assets/main/src/diff-tool/showcase.png" alt="Showcase">
 
 </div>
 
