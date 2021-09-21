@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v2.3.0 (2021-09-20)
+
+* Drop support for Python 3.6
+* Replaces the `mock` library with the builtin `unittest.mock` library
+* Reworks tests to use `io.StringIO()` instead of actual temp files
+
 ## v2.2.0 (2021-04-12)
 
 * Fixed a bug when using this as a CLI tool and the tool wouldn't accept the path arguments (eg: TypeError: expected str, bytes or os.PathLike object, not TextIOWrapper)

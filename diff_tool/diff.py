@@ -2,29 +2,29 @@ import argparse
 import difflib
 
 
-class Cli():
+class Cli:
     def __init__(self):
         parser = argparse.ArgumentParser(
-            description='Display a diff between two files in HTML.'
+            description='Display a diff between two files in HTML.',
         )
         parser.add_argument(
             '-f1',
             '--file1',
             required=True,
-            help='The path to the base file to compare a second file to.'
+            help='The path to the base file to compare a second file to.',
         )
         parser.add_argument(
             '-f2',
             '--file2',
             required=True,
-            help='The path to the second file compared to the base file.'
+            help='The path to the second file compared to the base file.',
         )
         parser.add_argument(
             '-o',
             '--output',
             required=False,
             default='diff.html',
-            help='The output to the output file including filename.'
+            help='The output to the output file including filename.',
         )
         parser.parse_args(namespace=self)
 
@@ -36,11 +36,10 @@ class Cli():
         )
 
 
-class DiffTool():
+class DiffTool:
     @staticmethod
     def run(file1, file2, output='diff.html'):
-        """Display a diff between two files in HTML.
-        """
+        """Display a diff between two files in HTML."""
         file1_content = DiffTool._open_file(file1)
         file2_content = DiffTool._open_file(file2)
         diff = DiffTool.generate_diff(file1_content, file2_content)
@@ -49,8 +48,7 @@ class DiffTool():
 
     @staticmethod
     def generate_diff(file1, file2):
-        """Generate the content for the diff file
-        """
+        """Generate the content for the diff file"""
         generated_diff = difflib.HtmlDiff().make_file(
             file1,
             file2,
