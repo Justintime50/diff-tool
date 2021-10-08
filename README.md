@@ -23,9 +23,6 @@ pip3 install diff-tool
 
 # Install locally
 make install
-
-# Get Makefile help
-make help
 ```
 
 ## Usage
@@ -47,11 +44,8 @@ Options:
 ## Development
 
 ```bash
-# Lint the project
-make lint
-
-# Run tests
-make test
+# Get a comprehensive list of development tools
+make help
 
 # Run the tool locally
 venv/bin/python diff_tool/diff_files.py --help
