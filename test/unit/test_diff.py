@@ -1,16 +1,7 @@
 import io
 from unittest.mock import mock_open, patch
 
-from diff_tool import DiffTool
-
-
-@patch('diff_tool.diff.DiffTool._open_file')
-@patch('diff_tool.diff.DiffTool._write_file')
-def test_diff_run(mock_write, mock_open):
-    DiffTool.run('setup.py', 'README.md', 'output.html')
-
-    assert mock_open.call_count == 2
-    mock_write.assert_called_once()
+import diff_tool
 
 
 def test_generate_diff():
@@ -23,7 +14,7 @@ def test_generate_diff():
     file1.write('Hello')
     file2.write('Hello World')
 
-    result = DiffTool.generate_diff(
+    result = diff_tool.generate_diff(
         file1,
         file2,
     )
@@ -32,13 +23,13 @@ def test_generate_diff():
 
 
 def test_open_file():
-    content = DiffTool._open_file('README.md')
+    content = diff_tool.diff._open_file('README.md')
 
     assert '# Diff Tool\n' in content
 
 
 def test_write_file():
     with patch('builtins.open', mock_open()) as mocked_file:
-        DiffTool._write_file('file_content', 'test.txt')
+        diff_tool.diff._write_file('file_content', 'test.txt')
 
         mocked_file.assert_called_with('test.txt', 'w')

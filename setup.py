@@ -14,7 +14,7 @@ DEV_REQUIREMENTS = [
 
 setuptools.setup(
     name='diff-tool',
-    version='2.3.0',
+    version='3.0.0',
     description='Display a diff between two files in HTML.',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -32,8 +32,8 @@ setuptools.setup(
     },
     entry_points={
         'console_scripts': [
-            'diff-tool=diff_tool.diff:main',
+            'diff-tool=diff_tool.cli:main',
         ],
     },
-    python_requires='>=3.7',
+    python_requires='>=3.7, <4',
 )

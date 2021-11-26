@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v3.0.0 (2021-11-25)
+
+* Refactored app
+    * Moved `cli` logic to its own module
+    * Flattened diff logic to function instead of class methods since no class was needed
+    * Various small improvements, added type hinting, etc
+* Archiving project as I don't intend to keep maintaining it
+
 ## v2.3.0 (2021-09-20)
 
 * Drop support for Python 3.6
@@ -18,7 +26,7 @@
 
 ## v2.0.0 (2021-02-06)
 
-* Renamed `diff-tool` from `diff` to match published name and avoid conflict with potential other `diff` tools
+* Renamed `diff-tool` from `diff` to match published name and avoid conflict with other potential `diff` tools
 * Changed all classmethods to staticmethods
 * Switched from Travis CI to GitHub Actions
 

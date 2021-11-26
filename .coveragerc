@@ -1,5 +1,2 @@
-[report]
-exclude_lines =
-    if __name__ == '__main__':
-    main()
-    Cli()
+[run]
+omit = diff_tool/cli.py
