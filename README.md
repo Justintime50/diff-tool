@@ -29,7 +29,7 @@ make install
 
 ```
 Usage:
-    diff-tool -f1 /path/to/file1.txt -f2 /path/to/file2.txt -o path/to/diff.html
+    diff-tool --file1 /path/to/file1.txt --file2 /path/to/file2.txt --output path/to/diff.html
 
 Options:
     -h, --help            show this help message and exit
@@ -38,7 +38,7 @@ Options:
     -f2 FILE2, --file2 FILE2
                             The path to the second file compared to the base file.
     -o OUTPUT, --output OUTPUT
-                            The path to the output file including filename.
+                            The path/name to the output file where the diff will be stored.
 ```
 
 ## Development
